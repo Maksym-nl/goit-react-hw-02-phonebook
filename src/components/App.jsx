@@ -24,6 +24,13 @@ export class App extends Component {
     }));
   };
 
+  deletContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contactId => contactId !== contactId),
+    }));
+    console.log(contactId);
+  };
+
   chanchFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
@@ -38,7 +45,10 @@ export class App extends Component {
     return (
       <div>
         <Form addContact={this.addContact} />
-        <ContactList contacts={this.state.contacts} />
+        <ContactList
+          contacts={this.state.contacts}
+          onDelete={this.deletContact}
+        />
         <Filter value={filter} onChange={this.chanchFilter} />
       </div>
     );
