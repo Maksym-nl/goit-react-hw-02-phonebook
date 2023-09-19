@@ -6,7 +6,7 @@ export function ContactList({ contacts, onDelete }) {
         <li key={contact.id} onDelete={onDelete}>
           <p>{contact.name}</p>
           <p>{contact.number}</p>
-          <button onClick={() => onDelete(contactId)}>Удалить</button>
+          <button onClick={contactId => onDelete(contactId)}>Удалить</button>
         </li>
       ))}{' '}
     </ul>
