@@ -6,7 +6,7 @@ import { Filter } from './Filter/Filter';
 export class App extends Component {
   state = {
     contacts: [],
-    filter: [],
+    filter: ' ',
   };
 
   addContact = ({ name, number }) => {
@@ -33,7 +33,7 @@ export class App extends Component {
   );
 
   render() {
-    const { filter } = this.state.filter;
+    const { filter } = this.state;
     console.log(this.state);
     return (
       <div>
