@@ -26,9 +26,10 @@ export class App extends Component {
 
   deletContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contactId => contactId !== contactId),
+      contacts: prevState.contacts.filter(contact => {
+        return contact.id !== contactId;
+      }),
     }));
-    console.log(contactId);
   };
 
   chanchFilter = e => {
