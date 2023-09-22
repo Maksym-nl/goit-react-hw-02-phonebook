@@ -1,14 +1,25 @@
+import {
+  List,
+  ListItem,
+  NameItem,
+  ContactItem,
+  BtnItem,
+} from './Contactlist.styled';
+import { ImCross } from 'react-icons/im';
 export function ContactList({ contacts, onDelete }) {
   return (
-    <ul>
+    <List>
       {' '}
       {contacts.map(contact => (
-        <li key={contact.id}>
-          <p>{contact.name}</p>
-          <p>{contact.number}</p>
-          <button onClick={() => onDelete(contact.id)}>Удалить</button>
-        </li>
+        <ListItem key={contact.id}>
+          <NameItem color="blue">{contact.name}</NameItem>
+          <ContactItem color="green">{contact.number}</ContactItem>
+          <BtnItem onClick={() => onDelete(contact.id)}>
+            Удалить
+            <ImCross />
+          </BtnItem>
+        </ListItem>
       ))}{' '}
-    </ul>
+    </List>
   );
 }

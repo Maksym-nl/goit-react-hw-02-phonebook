@@ -1,7 +1,7 @@
 import React from 'react';
-
+import { NameLabel, Input } from './Filter.styled';
 export const Filter = ({ value, onChange }) => (
-  <label>
-    Фильтр по имени <input type="text" value={value} onChange={onChange} />
-  </label>
+  <NameLabel>
+    Фильтр по имени <Input type="text" value={value} onChange={onChange} />
+  </NameLabel>
 );

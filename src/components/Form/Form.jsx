@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { GoSearch } from 'react-icons/go';
+import { NameLabel, Input } from './Form.styled';
 
 export class Form extends Component {
   state = {
@@ -17,12 +19,11 @@ export class Form extends Component {
   };
 
   render() {
-    
     return (
       <form onSubmit={this.handleOnSubmit}>
-        <label>
+        <NameLabel>
           Name:
-          <input
+          <Input
             onChange={this.handleInputChange}
             type="text"
             name="name"
@@ -31,10 +32,10 @@ export class Form extends Component {
             required
             value={this.state.name}
           />
-        </label>
-        <label>
+        </NameLabel>
+        <NameLabel>
           Number:
-          <input
+          <Input
             onChange={this.handleInputChange}
             type="tel"
             name="number"
@@ -43,8 +44,10 @@ export class Form extends Component {
             required
             value={this.state.number}
           />
-                  </label>
-                  <button type='submit'>Submit</button>
+        </NameLabel>
+        <button type="submit">
+          <GoSearch size="40px" />
+        </button>
       </form>
     );
   }
